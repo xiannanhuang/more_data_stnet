@@ -1,0 +1,41 @@
+data_dir: ./data/nycbike  # Directory where your data files are stored
+model_dir: ./saved_models  # Directory to save trained models
+checkpoint_dir: ./checkpoints  # Directory to save model checkpoints
+num_nodes: 200  # Number of nodes (or features) in your data
+batch_size: 128  # Batchsize for training
+num_epochs: 100  # Number of training epochs
+learning_rate: 0.005  # Learning rate for the optimizer
+log_dir : ./logs/nycbike
+# Model-specific configuration
+feature_dim: 2
+dropout: 0.3
+blocks: 4
+layers: 2
+kernel_size: 2
+input_window: 6
+output_window: 1
+output_dim: 2
+nhid: 32
+residual_channels: 32
+dilation_channels: 32
+skip_channels: 256
+end_channels: 512
+device: cuda  # Use 'cuda' for GPU or 'cpu' for CPU
+train_months: 96
+alpha : 0.9  ##alpha in ema
+alpha2 : 1  ##alpha in self_kd_loss
+temperature : 1
+val_last_days : 15
+test_year : 2022
+test_month : 12
+adj_mx_file : bike_adjacency_matrix.npy
+model : GWNET
+# Learning rate scheduler configuration
+lr_scheduler:
+  type: plateau  # Type of learning rate scheduler (step or plateau)
+  step_size: 2  # Step size for learning rate decay (used when type is 'step')
+  gamma: 0.9  # Multiplicative factor for learning rate decay (used when type is 'step')
+  factor: 0.5  # Factor by which the learning rate will be reduced (used when type is 'plateau')
+  patience: 5  # Number of epochs with no improvement after which learning rate will be reduced (used when type is 'plateau')
+train_method: 'weighted'
+dataset_name : nycbike
