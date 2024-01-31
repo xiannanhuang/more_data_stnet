@@ -542,8 +542,7 @@ class MTGNN(nn.Module):
         self.node_dim = config.get('node_dim', 20)
         self.dilation_exponential = config.get('dilation_exponential', 1)
 
-        # self.conv_channels = config.get('conv_channels', 32)
-        self.conv_channels = config.get('conv_channels', 64)
+        self.conv_channels = config.get('conv_channels', 32)
         self.residual_channels = config.get('residual_channels', 64)
         self.skip_channels = config.get('skip_channels', 64)
         self.end_channels = config.get('end_channels', 128)
