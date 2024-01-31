@@ -207,8 +207,7 @@ class STGCN(nn.Module):
 
         self.Ks = config.get('Ks', 3)
         self.Kt = config.get('Kt', 2)
-        # self.blocks  =[[1, 32, 64], [64, 32, 128]]
-        self.blocks  =[[1, 64, 128], [128, 64, 256]]
+        self.blocks  =[[1, 32, 64], [64, 32, 128]]
         self.input_window = config.get('input_window', 1)
         self.output_window = config.get('output_window', 1)
         self.drop_prob = config.get('dropout', 0)
