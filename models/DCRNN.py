@@ -242,8 +242,7 @@ class Seq2SeqAttrs:
         self.filter_type = config.get('filter_type', 'laplacian')
         self.num_nodes = int(config.get('num_nodes', 1))
         self.num_rnn_layers = int(config.get('num_rnn_layers', 2))
-        # self.rnn_units = int(config.get('rnn_units', 64))
-        self.rnn_units = int(config.get('rnn_units', 128))
+        self.rnn_units = int(config.get('rnn_units', 64))
         self.hidden_state_size = self.num_nodes * self.rnn_units
         self.input_dim = config.get('feature_dim', 1)
         self.device = config.get('device', torch.device('cpu'))
