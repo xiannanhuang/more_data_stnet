@@ -70,8 +70,8 @@ class gwnet(nn.Module):
                  out_dim=2,
                  residual_channels=16,
                  dilation_channels=16,
-                 skip_channels=256,
-                 end_channels=512,
+                 skip_channels=128,
+                 end_channels=256,
                  kernel_size=2,
                  blocks=4,
                  layers=2):
