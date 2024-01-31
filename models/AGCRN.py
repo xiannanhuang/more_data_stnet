@@ -115,8 +115,7 @@ class AGCRN(nn.Module):
         self.output_window = config.get('output_window', 1)
         self.output_dim = config.get('output_dim', 1)
  
-        # self.hidden_dim = 64
-        self.hidden_dim = 32
+        self.hidden_dim = 64
         self.embed_dim = 10
 
         self.node_embeddings = nn.Parameter(torch.randn(self.num_nodes, self.embed_dim), requires_grad=True)
